@@ -3,31 +3,36 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Tool from './components/Tool';
 import Tools from './pages/Tools';
+import Help from './pages/Help';
+import About from './pages/About';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NotFound from './components/404';
 
 export default function App() {
 	const showTools = true;
 	return (
-		<div className='App bg-lam-slate'>
-			<div>
-				<div>
-					<Header />
-				</div>
-				<div>
-					{showTools ? (
-						<div className='flex flex-col flex-wrap m-6 justify-center'>
-							<Tools />
-						</div>
-					) : (
-						<p>You cannot see the employees</p>
-					)}
-				</div>
-				<br />
-				<br />
-				<br />
-				<div>
-					<Footer />
-				</div>
-			</div>
-		</div>
+		<BrowserRouter>
+			<Header>
+				<Routes>
+					<Route
+						path='/tools'
+						element={<Tools />}
+					/>
+					<Route
+						path='/help'
+						element={<Help />}
+					/>
+					<Route
+						path='/about'
+						element={<About />}
+					/>
+					<Route
+						path='/404'
+						element={<NotFound />}
+					/>
+				</Routes>
+			</Header>
+		</BrowserRouter>
 	);
 }

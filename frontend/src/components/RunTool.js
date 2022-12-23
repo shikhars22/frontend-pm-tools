@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { ChangeEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function RunTool(props) {
 	const [show, setShow] = useState(false);
@@ -9,6 +10,7 @@ export default function RunTool(props) {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	const [file, setFile] = useState();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		console.log(
@@ -23,7 +25,9 @@ export default function RunTool(props) {
 			setFile(e.target.files[0]);
 		}
 	};
-	const handleUploadClick = () => {
+	const handleUploadClick = (e) => {
+		e.preventDefault();
+		handleClose();
 		if (!file) {
 			return;
 		}
@@ -38,7 +42,13 @@ export default function RunTool(props) {
 				'content-length': `${file.size}`, // 👈 Headers need to be a string
 			},
 		})
-			.then((res) => res.json())
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error('Something went wrong');
+				}
+				// navigate('/404');
+				return res.json();
+			})
 			.then((data) => console.log(data))
 			.catch((err) => console.error(err));
 	};
@@ -63,6 +73,11 @@ export default function RunTool(props) {
 				</Modal.Header>
 				<Modal.Body>
 					<form
+						// onSubmit={(e) => {
+						// 	handleClose();
+						// 	e.preventDefault();
+						// props.updateEmployee(props.id, name, role);
+						// }}
 						id='runToolModal'
 						className='w-full max-w-sm'>
 						<div className='md:flex md:items-center'>
@@ -120,7 +135,7 @@ export default function RunTool(props) {
 										onChange={handleFileChange}
 									/>
 									<div className='flex text-lam-mint justify-center my-6'>
-										{file && `${file.name} - ${file.type}` + ' is uploaded'}
+										{file && `${file.name}` + ' is uploaded'}
 									</div>
 								</label>
 							</div>

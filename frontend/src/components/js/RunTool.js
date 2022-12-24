@@ -54,24 +54,27 @@ export default function RunTool(props) {
 	};
 	return (
 		<>
-			<button
-				className='px-4 py-1 text-sm text-emerald-600 bg-white
+			<div className='flex justify-center'>
+				<button
+					className='px-4 py-1 text-sm text-emerald-600 bg-white
         font-semibold rounded-full border border-emerald-200
          hover:border-transparent hover:text-lam-mint
         focus:outline-none focus:ring-2 focus:ring-lam-mint focus:ring-offset-2'
-				onClick={handleShow}>
-				Run
-			</button>
-
+					onClick={handleShow}>
+					Run
+				</button>
+			</div>
 			<Modal
 				show={show}
 				onHide={handleClose}
 				backdrop='static'
 				keyboard={false}>
-				<Modal.Header closeButton>
+				<Modal.Header
+					closeButton
+					className='bg-lam-midnight text-white'>
 					<Modal.Title>Run {props.name} Tool</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>
+				<Modal.Body className='flex justify-center'>
 					<form
 						// onSubmit={(e) => {
 						// 	handleClose();
@@ -80,9 +83,9 @@ export default function RunTool(props) {
 						// }}
 						id='runToolModal'
 						className='w-full max-w-sm'>
-						<div className='md:flex md:items-center'>
-							<div className='md:w-1/3'></div>
-							<div className='md:w-2/3'>
+						<div className='flex justify-center md:flex md:items-center'>
+							{/* <div className='md:w-1/3'></div> */}
+							<div>
 								<button
 									className='m-6 shadow bg-emerald-400 hover:bg-lam-mint
                                     focus:shadow-outline focus:outline-none text-white 
@@ -92,8 +95,8 @@ export default function RunTool(props) {
 								</button>
 							</div>
 						</div>
-						<div className='flex justify-end'>
-							<div className='md:flex md:items-center flex items-center justify-end w-full'>
+						<div className='flex'>
+							<div className='md:flex md:items-center flex items-center justify-center w-full'>
 								<label
 									htmlFor='dropzone-file'
 									className='flex flex-col items-center justify-end w-full 
@@ -118,8 +121,8 @@ export default function RunTool(props) {
 												strokeWidth='2'
 												d='M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12'></path>
 										</svg>
-										<p className='mb-2 text-sm text-lam-midnight dark:text-gray-400'>
-											<span className='font-semibold'>
+										<p className='mb-2 text-sm dark:text-gray-400'>
+											<span className='font-semibold text-lam-midnight'>
 												Step 2 - Click to upload
 											</span>{' '}
 											or drag and drop
@@ -143,9 +146,9 @@ export default function RunTool(props) {
 					</form>
 				</Modal.Body>
 				<Modal.Footer>
-					<div className='flex justify-center md:flex md:items-center'>
+					<div className='md:flex md:items-center'>
 						<button
-							className='m-6 shadow bg-lam-slate hover:bg-lam-midnight
+							className='m-2 shadow bg-lam-slate hover:bg-lam-midnight
                                     focus:shadow-outline focus:outline-none text-white 
                                     font-bold py-2 px-4 rounded'
 							onClick={handleClose}>
@@ -154,7 +157,7 @@ export default function RunTool(props) {
 						<button
 							onClick={handleUploadClick}
 							form='runToolModal'
-							className='m-6 shadow bg-emerald-400 hover:bg-lam-mint
+							className='m-2 shadow bg-emerald-400 hover:bg-lam-mint
                                     focus:shadow-outline focus:outline-none text-white 
                                     font-bold py-2 px-4 rounded'>
 							Step 3 - Run Tool

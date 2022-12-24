@@ -1,7 +1,5 @@
-import { useState } from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Tool from '../components/Tool';
+import { useEffect, useState } from 'react';
+import Tool from '../components/js/Tool';
 
 export default function Tools() {
 	const [tools, setTools] = useState([
@@ -31,8 +29,8 @@ export default function Tools() {
 		},
 		{
 			id: 5,
-			name: 'Part Demand',
-			desc: 'Last 5 year non-MFG demand',
+			name: 'Part S & S Demand',
+			desc: 'Last 5 year demand',
 			img: 'https://lamresearch.wpenginepowered.com/wp-content/uploads/2018/01/DSiE_Products_1920x600-760x428.jpg',
 		},
 		{
@@ -51,22 +49,28 @@ export default function Tools() {
 
 	return (
 		<>
-			<div className='bg-lam-slate min-h-screen'>
-				<div className='flex flex-wrap'>
+			<div className='bg-lam-midnight min-h-screen'>
+				<div className='flex flex-wrap justify-center'>
 					{tools
 						? tools.map((tool) => {
 								console.log(tool);
 								return (
-									<Tool
-										key={tool.id}
-										id={tool.id}
-										desc={tool.desc}
-										img={tool.img}
-										name={tool.name}
-									/>
+									<div>
+										<Tool
+											key={tool.id}
+											id={tool.id}
+											desc={tool.desc}
+											img={tool.img}
+											name={tool.name}
+										/>
+									</div>
 								);
 						  })
 						: null}
+				</div>
+				<div>
+					<br />
+					<br />
 				</div>
 			</div>
 		</>

@@ -53,10 +53,11 @@ export default function Register() {
 
 	return (
 		<div
-			className='m-2 p-8 max-w-sm min-w-sm 
-					bg-white rounded-xl shadow-lg space-y-2
+			className='m-10 p-8 max-w-sm min-w-sm text-white
+					bg-lam-midnight rounded-xl shadow-lg space-y-2
 					sm:py-4 sm:flex sm:items-center sm:space-y-0 
-					sm:space-x-6 border-b-4 border-purple-700 hover:border-purple-500'>
+					sm:space-x-6 border-b-4  border-r-4
+					border-lam-mint hover:border-lam-midnight'>
 			<form
 				className='w-full max-w-sm'
 				id='register'
@@ -69,11 +70,11 @@ export default function Register() {
 						<input
 							id='email'
 							type={'text'}
-							className='m-2 block shrink min-w-0 bg-gray-300 
-                                appearance-none border-2 border-gray-300 
-                                rounded w-full py-2 px-4 text-gray-700 
+							className='m-2 block shrink min-w-0 bg-lam-slate 
+                                appearance-none border-2 border-lam-slate
+                                rounded w-full py-2 px-4 text-lam-midnight 
                                 leading-tight focus:outline-none 
-                                focus:bg-white focus:border-purple-500'
+                                focus:bg-white focus:border-lam-mint'
 							value={email}
 							onChange={(e) => {
 								setEmail(e.target.value);
@@ -89,11 +90,11 @@ export default function Register() {
 						<input
 							id='username'
 							type={'text'}
-							className='m-2 block shrink min-w-0 bg-gray-300 
-                                appearance-none border-2 border-gray-300 
-                                rounded w-full py-2 px-4 text-gray-700 
+							className='m-2 block shrink min-w-0 bg-lam-slate 
+                                appearance-none border-2 border-lam-slate
+                                rounded w-full py-2 px-4 text-lam-midnight 
                                 leading-tight focus:outline-none 
-                                focus:bg-white focus:border-purple-500'
+                                focus:bg-white focus:border-lam-mint'
 							value={username}
 							onChange={(e) => {
 								setUsername(e.target.value);
@@ -109,11 +110,11 @@ export default function Register() {
 						<input
 							id='password'
 							type={'password'}
-							className='m-2 block shrink min-w-0 bg-gray-300 
-                                appearance-none border-2 border-gray-300 
-                                rounded w-full py-2 px-4 text-gray-700 
+							className='m-2 block shrink min-w-0 bg-lam-slate 
+                                appearance-none border-2 border-lam-slate
+                                rounded w-full py-2 px-4 text-lam-midnight 
                                 leading-tight focus:outline-none 
-                                focus:bg-white focus:border-purple-500'
+                                focus:bg-white focus:border-lam-mint'
 							value={password}
 							onChange={(e) => {
 								setPassword(e.target.value);
@@ -123,9 +124,9 @@ export default function Register() {
 				</div>
 				<div className='flex justify-center'>
 					<button
-						className='my-4 mx-2 bg-purple-500 hover:bg-purple-400 
-						text-white font-bold py-2 px-4 border-b-4 
-						border-purple-700 hover:border-purple-500 rounded'
+						className='m-6 shadow bg-lam-mint hover:bg-white
+                                    focus:shadow-outline focus:outline-none text-lam-midnight 
+                                    font-bold py-2 px-4 rounded'
 						form='register'>
 						Register
 					</button>

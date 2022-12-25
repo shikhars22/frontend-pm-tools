@@ -12,14 +12,18 @@ export default function RunTool(props) {
 	const [file, setFile] = useState();
 	const navigate = useNavigate();
 
-	// useEffect(() => {
-	// 	console.log(
-	// 		'This file is uploaded for : ',
-	// 		props.name,
-	// 		'tool. The file details are: ',
-	// 		file
-	// 	);
-	// }, [file]);
+	/* useEffect(() => {
+		console.log(
+			'This file is uploaded for : ',
+			props.name,
+			'tool. The file details are: ',
+			file
+		);
+	}, [file]); */
+
+	// Used below link to develop file upload component
+	// https://codefrontend.com/file-upload-reactjs/
+
 	const handleFileChange = (e) => {
 		if (e.target.files) {
 			setFile(e.target.files[0]);
@@ -113,8 +117,7 @@ export default function RunTool(props) {
 											fill='none'
 											stroke='currentColor'
 											viewBox='0 0 24 24'
-											// xmlns='http://www.w3.org/2000/svg'
-										>
+											xmlns='http://www.w3.org/2000/svg'>
 											<path
 												strokeLinecap='round'
 												strokeLinejoin='round'

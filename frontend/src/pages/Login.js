@@ -24,15 +24,15 @@ export default function Login() {
 			}),
 		})
 			.then((response) => {
-				console.log(response);
+				// console.log(response);
 				return response.json();
 			})
 			.then((data) => {
 				localStorage.setItem('access', data.access);
 				localStorage.setItem('refresh', data.refresh);
-				console.log(localStorage);
-				console.log(localStorage.state);
-				console.log(localStorage?.state?.previousUrl);
+				// console.log(localStorage);
+				// console.log(localStorage.state);
+				// console.log(localStorage?.state?.previousUrl);
 				setLoggedIn(true);
 				navigate(
 					location?.state?.previousUrl
@@ -50,7 +50,7 @@ export default function Login() {
 			className='m-10 p-8 max-w-sm min-w-sm text-white
 					bg-lam-midnight rounded-xl shadow-lg space-y-2
 					sm:py-4 sm:flex sm:items-center sm:space-y-0 
-					sm:space-x-6 border-b-4 border-l-4 border-r-4
+					sm:space-x-6 border-b-4  border-r-4
 					border-lam-mint hover:border-lam-midnight'>
 			<form
 				className='w-full max-w-sm'
@@ -69,7 +69,7 @@ export default function Login() {
                                 rounded w-full py-2 px-4 text-lam-midnight 
                                 leading-tight focus:outline-none 
                                 focus:bg-white focus:border-lam-mint'
-							value={username}
+							defaultValue={username}
 							onChange={(e) => {
 								setUsername(e.target.value);
 							}}
@@ -89,7 +89,7 @@ export default function Login() {
                                 rounded w-full py-2 px-4 text-lam-midnight 
                                 leading-tight focus:outline-none 
                                 focus:bg-white focus:border-lam-mint'
-							value={password}
+							defaultValue={password}
 							onChange={(e) => {
 								setPassword(e.target.value);
 							}}

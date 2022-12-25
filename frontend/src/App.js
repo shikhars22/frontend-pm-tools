@@ -11,6 +11,7 @@ import MyProfile from './pages/MyProfile';
 import Login from './pages/Login';
 import { apiLoginRefreshUrl, baseUrl } from './shared';
 import Register from './pages/Register';
+import FAQs from './components/js/FAQs';
 
 export const LoginContext = createContext();
 

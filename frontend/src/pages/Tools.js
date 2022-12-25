@@ -31,27 +31,24 @@ export default function Tools() {
 	return (
 		<>
 			<div className='bg-lam-midnight min-h-screen'>
-				<div className='flex flex-wrap justify-center'>
+				<div className='m-8 flex flex-wrap justify-center'>
 					{tools
 						? tools.map((tool) => {
 								// console.log(tool);
 								return (
-									<div>
-										<Tool
-											key={tool.id.toString()}
-											// id={tool.id}
-											desc={tool.desc}
-											img={tool.img}
-											name={tool.name}
-										/>
+									<div key={tool.id.toString()}>
+										{tool.isActive ? (
+											<Tool
+												// id={tool.id}
+												desc={tool.desc}
+												img={tool.img}
+												name={tool.name}
+											/>
+										) : null}
 									</div>
 								);
 						  })
 						: null}
-				</div>
-				<div>
-					<br />
-					<br />
 				</div>
 			</div>
 		</>

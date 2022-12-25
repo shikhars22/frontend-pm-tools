@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 // import Lam_Research_logo_White from '../../images/logoWhite.png';
@@ -6,6 +6,7 @@ import Lam_Research_logo_midnight from '../../images/logoDark.png';
 import defaultAvatar from '../../images/defaultAvatar.png';
 import Footer from './Footer';
 import { NavLink } from 'react-router-dom';
+import { LoginContext } from '../../App';
 
 const navigation = [
 	{ name: 'About', href: '/about' },
@@ -19,6 +20,8 @@ function classNames(...classes) {
 }
 
 export default function Header(props) {
+	const [loggedIn, setLoggedIn] = useContext(LoginContext);
+
 	return (
 		<div>
 			<Disclosure
@@ -118,18 +121,18 @@ export default function Header(props) {
 											leaveFrom='transform opacity-100 scale-100'
 											leaveTo='transform opacity-0 scale-95'>
 											<Menu.Items
-												className='absolute right-0 z-10 
-											mt-2 w-48 origin-top-right rounded-md bg-white
+												className='text-white absolute right-0 z-10 
+											mt-2 w-48 origin-top-right rounded-md bg-lam-midnight border-2
 											py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
 												<Menu.Item>
 													{({ active }) => (
 														<a
 															href='/myprofile'
 															className={classNames(
-																active ? 'bg-gray-200' : '',
-																'block px-4 py-2 text-sm text-gray-700 no-underline'
+																active ? 'bg-lam-slate' : '',
+																'block px-4 py-2 text-sm text-white no-underline'
 															)}>
-															Your Profile
+															My Profile
 														</a>
 													)}
 												</Menu.Item>
@@ -145,18 +148,40 @@ export default function Header(props) {
 														</a>
 													)}
 												</Menu.Item> */}
-												<Menu.Item>
-													{({ active }) => (
-														<a
-															href='/login'
-															className={classNames(
-																active ? 'bg-gray-100' : '',
-																'block px-4 py-2 text-sm text-gray-700 no-underline'
-															)}>
-															Sign In
-														</a>
-													)}
-												</Menu.Item>
+												{loggedIn ? (
+													<Menu.Item>
+														{({ active }) => (
+															<a
+																href='/login'
+																onClick={() => {
+																	// console.log('logging out');
+																	setLoggedIn(false);
+																	localStorage.clear();
+																}}
+																className={classNames(
+																	active ? 'bg-lam-slate' : '',
+																	'block px-4 py-2 text-sm text-white' +
+																		' no-underline'
+																)}>
+																Log out
+															</a>
+														)}
+													</Menu.Item>
+												) : (
+													<Menu.Item>
+														{({ active }) => (
+															<a
+																href='/login'
+																className={classNames(
+																	active ? 'bg-lam-slate' : '',
+																	'block px-4 py-2 text-sm text-white' +
+																		' no-underline'
+																)}>
+																Login
+															</a>
+														)}
+													</Menu.Item>
+												)}
 											</Menu.Items>
 										</Transition>
 									</Menu>

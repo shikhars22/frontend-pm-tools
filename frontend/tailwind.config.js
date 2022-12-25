@@ -3,6 +3,15 @@ module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
 		extend: {
+			keyframes: {
+				fadeIn: {
+					'0%': { opacity: 0 },
+					'100%': { opacity: 100 },
+				},
+			},
+			animation: {
+				fadeIn: 'fadeIn 0.4s ease-in-out forwards',
+			},
 			colors: {
 				'lam-mint': '#6CE3C6',
 				'lam-midnight': '#242437',
@@ -35,5 +44,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/aspect-ratio')],
 };

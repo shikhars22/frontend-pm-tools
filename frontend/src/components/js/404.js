@@ -8,8 +8,8 @@ export default function NotFound() {
 			<h1>The resource you are looking for is not found</h1>
 			<br />
 			<button
-				className='m-6 shadow bg-emerald-400 hover:bg-lam-mint
-                                    focus:shadow-outline focus:outline-none text-white 
+				className='m-6 shadow bg-lam-mint hover:bg-white
+                                    focus:shadow-outline focus:outline-none text-lam-midnight 
                                     font-bold py-2 px-4 rounded'
 				onClick={() => {
 					navigate('/tools/');

@@ -27,6 +27,12 @@ module.exports = {
 				'lam-slate': '#6A7885',
 				'lam-sand': '#E6E3DC',
 			},
+			borderColor: {
+				'lam-mint': '#6CE3C6',
+				'lam-midnight': '#242437',
+				'lam-slate': '#6A7885',
+				'lam-sand': '#E6E3DC',
+			},
 		},
 	},
 	plugins: [],

@@ -1,6 +1,18 @@
 // Example taken from https://codepen.io/owaiswiz/pen/gOpLmYv
 
+import { useState } from 'react';
+
 export default function ContactUs() {
+	const [name, setName] = useState();
+	const [msg, setMsg] = useState();
+	const [email, setEmail] = useState();
+
+	function createContactInquiry(e) {
+		e.preventDefault();
+		console.log('test');
+		console.log('contact inquiry created ... ', e, name, email, msg);
+	}
+
 	return (
 		<div>
 			<div className='bg-lam-midnight text-gray-100 px-8 mb-16'>
@@ -9,45 +21,69 @@ export default function ContactUs() {
                 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32
                 py-16 mx-auto bg-lam-sand text-lam-midnight rounded-lg shadow-lg'>
 					{graphics ? graphics : null}
-					<div className=''>
-						<div>
-							<span className='uppercase text-sm text-lam-slate font-bold'>
-								Full Name
-							</span>
-							<input
-								className='w-full bg-gray-300 text-lam-midnight 
+					<form
+						id='createContactInquiry'
+						onSubmit={createContactInquiry}>
+						<div className=''>
+							<div>
+								<span className='uppercase text-sm text-lam-slate font-bold'>
+									Full Name
+								</span>
+								<input
+									className='w-full bg-gray-300 text-lam-midnight 
                                 mt-2 p-3 rounded-lg focus:outline-none 
                                 focus:shadow-outline'
-								type='text'
-								placeholder=''
-							/>
-						</div>
-						<div className='mt-8'>
-							<span className='uppercase text-sm text-lam-slate font-bold'>
-								Email
-							</span>
-							<input
-								className='w-full bg-gray-300 text-lam-midnight mt-2 p-3 
+									defaultValue={name}
+									onChange={(e) => {
+										setName(e.target.value);
+									}}
+									id='name'
+									type='text'
+									placeholder=''
+								/>
+							</div>
+							<div className='mt-8'>
+								<span className='uppercase text-sm text-lam-slate font-bold'>
+									Email
+								</span>
+								<input
+									className='w-full bg-gray-300 text-lam-midnight mt-2 p-3 
                                 rounded-lg focus:outline-none focus:shadow-outline'
-								type='text'
-							/>
-						</div>
-						<div className='mt-8'>
-							<span className='uppercase text-sm text-lam-slate font-bold'>
-								Message
-							</span>
-							<textarea className='w-full h-32 bg-gray-300 text-lam-midnight mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline'></textarea>
-						</div>
-						<div className='mt-8'>
-							<button
-								className='uppercase text-sm font-bold tracking-wide 
+									defaultValue={email}
+									onChange={(e) => {
+										setEmail(e.target.value);
+									}}
+									id='email'
+									type='text'
+								/>
+							</div>
+							<div className='mt-8'>
+								<span className='uppercase text-sm text-lam-slate font-bold'>
+									Message
+								</span>
+								<textarea
+									defaultValue={msg}
+									onChange={(e) => {
+										setMsg(e.target.value);
+									}}
+									id='msg'
+									className='w-full h-32 bg-gray-300 text-lam-midnight 
+									mt-2 p-3 rounded-lg focus:outline-none
+									focus:shadow-outline'
+								/>
+							</div>
+							<div className='mt-8'>
+								<button
+									form='createContactInquiry'
+									className='uppercase text-sm font-bold tracking-wide 
                             bg-lam-mint text-lam-midnight hover:text-white hover:bg-emerald-400 
                              p-3 rounded-lg
                             w-full focus:outline-none focus:shadow-outline'>
-								Send Message
-							</button>
+									Send Message
+								</button>
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>

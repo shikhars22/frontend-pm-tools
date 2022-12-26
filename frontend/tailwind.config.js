@@ -1,5 +1,7 @@
+// taken from example https://tailwindcss.com/docs/theme#customizing-the-default-theme
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+https: module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
 		extend: {

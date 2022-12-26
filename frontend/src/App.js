@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import { apiLoginRefreshUrl, baseUrl } from './shared';
 import Register from './pages/Register';
 import FAQs from './components/js/FAQs';
+import ContactUs from './components/js/ContactUs';
 
 export const LoginContext = createContext();
 
@@ -68,6 +69,10 @@ export default function App() {
 						<Route
 							path='/help'
 							element={<Help />}
+						/>
+						<Route
+							path='/contact'
+							element={<ContactUs />}
 						/>
 						<Route
 							path='/register'

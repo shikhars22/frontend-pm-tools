@@ -75,7 +75,7 @@ export default function RunTool(props) {
 				keyboard={false}>
 				<Modal.Header
 					closeButton
-					className='bg-lam-midnight text-white'>
+					className='bg-lam-midnight text-lam-sand'>
 					<Modal.Title>Run {props.name} Tool</Modal.Title>
 				</Modal.Header>
 				<Modal.Body className='flex justify-center'>

@@ -1,3 +1,5 @@
+// taken from example https://tailwindui.com/components/preview#component-70a9bdf83ef2c8568c5cddf6c39c2331
+
 import { Fragment, useContext } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -12,7 +14,7 @@ const navigation = [
 	{ name: 'About', href: '/about' },
 	{ name: 'Tool Catalog', href: '/tools' },
 	{ name: 'Help', href: '/help' },
-	{ name: 'Contact', href: '/contact' },
+	{ name: 'Contact Us', href: '/contact' },
 ];
 
 function classNames(...classes) {
@@ -103,10 +105,14 @@ export default function Header(props) {
 										as='div'
 										className='relative ml-3'>
 										<div>
-											<Menu.Button className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'>
+											<Menu.Button
+												className='flex rounded-full bg-lam-midnight text-sm hover:ring-2 
+												hover:ring-gray-900
+											focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
+											focus:ring-offset-lam-midnight'>
 												<span className='sr-only'>Open user menu</span>
 												<img
-													className='h-8 w-8 rounded-full'
+													className='h-10 w-10 rounded-full'
 													src={defaultAvatar}
 													alt=''
 												/>

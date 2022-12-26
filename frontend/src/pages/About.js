@@ -1,27 +1,31 @@
-// export default function About() {
-// 	return <p>About provided</p>;
+// example taken from https://tailwindui.com/components/preview#component-6bf262ecea63105e5f1fc57ec12057f9
 
-import FAQs from '../components/js/FAQs';
-
-// }
-const features = [
-	{ name: 'Origin', description: 'Designed by Good Goods, Inc.' },
-	{
-		name: 'Material',
-		description:
-			'Solid walnut base with rare earth magnets and powder coated steel card cover',
-	},
-	{ name: 'Dimensions', description: '6.25" x 3.55" x 1.15"' },
-	{ name: 'Finish', description: 'Hand sanded and finished with natural oil' },
-	{ name: 'Includes', description: 'Wood card tray and 3 refill packs' },
-	{
-		name: 'Considerations',
-		description:
-			'Made from natural materials. Grain and color vary with each item.',
-	},
-];
+import { useEffect } from 'react';
+import Tool from '../components/js/Tool';
+import useFetch from '../hooks/UseFetch';
+import { apiToolUrl, baseUrl } from '../shared';
 
 export default function About() {
+	const features = [
+		{ name: 'Origin', description: 'Designed by Good Goods, Inc.' },
+		{
+			name: 'Material',
+			description:
+				'Solid walnut base with rare earth magnets and powder coated steel card cover',
+		},
+		{ name: 'Dimensions', description: '6.25" x 3.55" x 1.15"' },
+		{
+			name: 'Finish',
+			description: 'Hand sanded and finished with natural oil',
+		},
+		{ name: 'Includes', description: 'Wood card tray and 3 refill packs' },
+		{
+			name: 'Considerations',
+			description:
+				'Made from natural materials. Grain and color vary with each item.',
+		},
+	];
+
 	return (
 		<div className='bg-lam-midnight rounded'>
 			<div
@@ -33,10 +37,11 @@ export default function About() {
 						PM Tools Portal
 					</h2>
 					<p className='mt-4 text-lam-sand'>
-						The walnut wood card tray is precision milled to perfectly fit a
-						stack of Focus cards. The powder coated steel divider separates
-						active cards from new ones, or can be used to archive important task
-						lists.
+						Product Management (PM) Tools portal helps you run reports online
+						which help in decision making regarding Lam products. You can run
+						the tool which is required and the output will be emailed to you. It
+						can take some time. The time taken is propotional to the number of
+						parts input.
 					</p>
 
 					<dl
@@ -58,22 +63,22 @@ export default function About() {
 					<img
 						src='https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg'
 						alt='Walnut card tray with white powder coated steel divider and 3 punchout holes.'
-						className='rounded-lg bg-gray-100'
+						className='rounded-lg bg-lam-sand hover:opacity-75'
 					/>
 					<img
 						src='https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg'
 						alt='Top down view of walnut card tray with embedded magnets and card groove.'
-						className='rounded-lg bg-gray-100'
+						className='rounded-lg bg-lam-sand hover:opacity-75'
 					/>
 					<img
 						src='https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg'
 						alt='Side of walnut card tray with card groove and recessed card area.'
-						className='rounded-lg bg-gray-100'
+						className='rounded-lg bg-lam-sand hover:opacity-75'
 					/>
 					<img
 						src='https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg'
 						alt='Walnut card tray filled with cards and card angled in dedicated groove.'
-						className='rounded-lg bg-gray-100'
+						className='rounded-lg bg-lam-sand hover:opacity-75'
 					/>
 				</div>
 			</div>

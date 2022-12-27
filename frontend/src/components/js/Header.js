@@ -5,7 +5,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 // import Lam_Research_logo_White from '../../images/logoWhite.png';
 import Lam_Research_logo_midnight from '../../images/logoDark.png';
-import defaultAvatar from '../../images/defaultAvatar.png';
+import defaultAvatar from '../../images/defaultAvatar.png'; //This is temporary... will use this link for user https://icons8.com/icons/set/user
 import Footer from './Footer';
 import { NavLink } from 'react-router-dom';
 import { LoginContext } from '../../App';

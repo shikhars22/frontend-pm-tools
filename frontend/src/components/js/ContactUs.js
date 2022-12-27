@@ -90,6 +90,9 @@ export default function ContactUs() {
 	);
 }
 
+export const serverEmail =
+	'mailto:csbg-pmapp-notification@lamresearch.com?subject=PM%20Tools%20Portal%20issue%20or%20help%20needed';
+
 export const graphics = (
 	<div className='flex flex-col justify-between'>
 		<div>
@@ -97,7 +100,15 @@ export const graphics = (
 				Lets talk about everything!
 			</h2>
 			<div className='text-lam-midnight mt-8'>
-				Hate forms? Send us an <span className='underline'>email</span> instead.
+				Hate forms? Send us an{' '}
+				<span className='underline'>
+					<a
+						href={serverEmail}
+						className='text-lam-midnight'>
+						email{' '}
+					</a>
+				</span>
+				instead.
 			</div>
 		</div>
 		<div className='mt-8 text-center'>

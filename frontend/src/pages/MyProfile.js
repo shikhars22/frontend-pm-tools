@@ -18,8 +18,7 @@ const callouts = [
 		description: 'View and edit my details',
 		imageSrc:
 			'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
-		imageAlt:
-			'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
+		imageAlt: 'My User Profile',
 		href: '#',
 	},
 	{
@@ -27,8 +26,7 @@ const callouts = [
 		description: 'Upcoming and past tool runs',
 		imageSrc:
 			'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
-		imageAlt:
-			'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
+		imageAlt: 'My tool runs',
 		href: '#',
 	},
 	{
@@ -36,7 +34,7 @@ const callouts = [
 		description: 'Manage all your periodic reports',
 		imageSrc:
 			'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
-		imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
+		imageAlt: 'My Periodic Reports',
 		href: '#',
 	},
 ];
